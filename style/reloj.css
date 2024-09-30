@@ -1,0 +1,107 @@
+body{
+    background: rgb(108,111,115);
+    background: linear-gradient(90deg, rgba(108,111,115,1) 0%, rgba(38,38,38,1) 100%);
+}
+#reloj{
+    /* border: 2px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 820px;
+    color: white;
+    width: 100%;
+    max-width: 1899px;
+    box-sizing:border-box;
+}
+#reloj div b, #reloj div{
+    font-size: 340px;
+}
+#reloj div b{
+    background-color: #f4f87d;
+    background-clip: border-box;
+    font-family: "Rubik Mono One", monospace;
+    width: 2ch;
+    text-align: center;
+    /* text-shadow: 0px 0px 10px #cac8c8; */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.puntio{
+    display: inline; 
+    margin-top: 170px; 
+    color: #8C7D60;
+}
+#contar{
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 200px;
+}
+#contar .con{
+    font-weight: bold;
+    color: #a09f9f;
+    box-shadow: 0px 0px 10px rgb(244, 248, 125);
+    height: 30px;
+    width: 100%;
+    background-color: rgb(244, 248, 125);
+}
+div .pal{
+    font-size: 80px;
+    font-family: 'Azonix', sans-serif;
+    background-color: #a09f9f;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+@media only screen and (max-width: 450px){
+    #reloj{
+        display: flex;
+        flex-direction: column;
+        height: 650px;
+    }
+    #reloj div b, #reloj div{
+        font-size: 200px;
+    }
+    div .pal{
+        display: none;
+    }
+    .puntio{
+        display: none;
+    }
+    #contar{
+        position: relative;
+        top: 20px;
+        column-gap: 7px;
+    }
+    #contar .con{
+        color: #212121;
+    }
+}
+@media only screen and (min-width: 450px) and (max-width: 926px){
+    div .pal{
+        display: none;
+    }
+    #reloj div b, #reloj div{
+        font-size: 140px;
+    }
+    #reloj{
+        display: flex;
+        flex-direction: row;
+        height: 200px;
+    }
+    .puntio{
+        margin-top: -30px;
+    }
+    #contar{
+        position: relative;
+        top: 10px;
+        column-gap: 5px;
+    }
+    #contar .con{
+        color: #212121;
+    }
+}
