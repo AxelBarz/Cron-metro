@@ -8,5 +8,5 @@ function mostrarReloj() {
     localStorage.setItem('min', min);
     localStorage.setItem('seg', seg);
 
-    window.open('../muestra.html', '_blank')
+    window.location.href='muestra.html'
 }
