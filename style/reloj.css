@@ -61,7 +61,7 @@ div .pal{
     #reloj{
         display: flex;
         flex-direction: column;
-        height: 650px;
+        height: 740px;
     }
     #reloj div b, #reloj div{
         font-size: 200px;
@@ -73,9 +73,10 @@ div .pal{
         display: none;
     }
     #contar{
-        position: relative;
-        top: 20px;
-        column-gap: 7px;
+        position: absolute;
+        top: 780px;
+        column-gap: 5px;
+        width: 95%;
     }
     #contar .con{
         color: #212121;
@@ -91,15 +92,16 @@ div .pal{
     #reloj{
         display: flex;
         flex-direction: row;
-        height: 200px;
+        height: 800px;
     }
     .puntio{
         margin-top: -30px;
     }
     #contar{
-        position: relative;
-        top: 10px;
+        position: absolute;
+        top: 570px;
         column-gap: 5px;
+        width: 98%;
     }
     #contar .con{
         color: #212121;
