@@ -73,3 +73,35 @@ function actualizarReloj() {
 setInterval(actualizarReloj, 1000);
 
 
+let wakeLock=null;
+
+async function activarWakeLock(){
+    try{
+        wakeLock=await navigator.wakeLock.request('screen');
+        console.log('Wake Lock activado');
+    }catch(err){
+        console.error(`${err.name}, ${err.messaje}`);
+    }
+}
+
+function desactivarWakeLock(){
+    if(wakeLock !== null){
+        wakeLock.release()
+        .then(()=>{
+            wakeLock=null;
+            console.log('Wake Lock desactivado');
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    activarWakeLock();
+});
+
+document.addEventListener('visibilitychange', () => {
+    if (wakeLock !== null && document.visibilityState === 'hidden'){
+        desactivarWakeLock();
+    }
+})
+
+
