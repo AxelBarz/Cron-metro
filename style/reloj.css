@@ -32,23 +32,6 @@ body{
     margin-top: 170px; 
     color: #8C7D60;
 }
-#contar{
-    display: flex;
-    flex-direction: row;
-    column-gap: 30px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: 200px;
-}
-#contar .con{
-    font-weight: bold;
-    color: #a09f9f;
-    box-shadow: 0px 0px 10px rgb(244, 248, 125);
-    height: 30px;
-    width: 100%;
-    background-color: rgb(244, 248, 125);
-}
 div .pal{
     font-size: 80px;
     font-family: 'Azonix', sans-serif;
@@ -57,11 +40,72 @@ div .pal{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent
 }
+.gr-btn-agregar{
+    width: 100%;
+    height: 7vh;
+    max-width: 1899px;
+    /* border: 2px solid white; */
+    display: flex;
+    justify-content: center;
+    column-gap: 10px ;
+
+}
+#detener-btn{
+    width: 3em;
+}
+#detener-btn:after{
+    transform: skewX(-45deg) scale(0, 1);
+}
+#detener-btn:hover:after {
+    transform: skewX(-45deg) scale(2, 2);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.btn {
+    width: 15em;
+    height: 2.7em;
+    margin: 0.5em;
+    background: #a09f9f;
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Azonix', sans-serif;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+button:hover {
+    color: black;
+}
+button:after {
+    content: "";
+    background: #f4f87d;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+
+button:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+
 @media only screen and (max-width: 450px){
     #reloj{
         display: flex;
         flex-direction: column;
-        height: 740px;
+        height: 710px;
     }
     #reloj div b, #reloj div{
         font-size: 200px;
@@ -72,19 +116,27 @@ div .pal{
     .puntio{
         display: none;
     }
-    #contar{
-        position: absolute;
-        top: 780px;
-        column-gap: 5px;
-        width: 95%;
+    .gr-btn-agregar{
+        position: relative;
+        bottom: 15px;
+        column-gap: 0;
     }
-    #contar .con{
-        color: #212121;
+    .btn{
+        width: 8em;
+        font-size: 17px;
+        transition: background-color 0.4s linear ;
+    }
+    button:hover{
+        background-color: black;
+        color: white;
+    }
+    button:after{
+        display: none;
     }
 }
 @media only screen and (min-width: 450px) and (max-width: 926px){
     div .pal{
-        display: none;
+        font-size: 20px;
     }
     #reloj div b, #reloj div{
         font-size: 140px;
@@ -95,15 +147,23 @@ div .pal{
         height: 800px;
     }
     .puntio{
-        margin-top: -30px;
+        position: relative;
+        bottom: 80px;
     }
-    #contar{
-        position: absolute;
-        top: 570px;
-        column-gap: 5px;
-        width: 98%;
+    .gr-btn-agregar{
+        position: relative;
+        bottom: 275px;
+        column-gap: 0;
     }
-    #contar .con{
-        color: #212121;
+    .btn{
+        width: 8em;
+        transition: background-color 0.4s linear ;
+    }
+    button:hover{
+        background-color: black;
+        color: white;
+    }
+    button:after{
+        display: none;
     }
 }

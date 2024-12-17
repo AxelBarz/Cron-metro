@@ -1,11 +1,9 @@
 var horas = parseInt(localStorage.getItem('hora'), 10);
 var min = parseInt(localStorage.getItem('min'), 10);
 var seg = parseInt(localStorage.getItem('seg'), 10);
+let interval = null
+let funcionamiento = true
 
-let contar = document.getElementById('contar');
-let cont = contar.getElementsByClassName('con');
-
-let divs=0;
 
 // Validar y asignar valores por defecto si es NaN
 if (isNaN(horas)) horas = 0;
@@ -26,26 +24,6 @@ function actualizarReloj() {
     if (min === 60) {
         min = 0;
         horas++;
-
-        if(divs>=cont.length){
-            for(let i=0; i<cont.length; i++){
-                cont[i].style.backgroundColor='rgb(244, 248, 125)';
-            }
-            divs=0
-        } else{
-            for (let i = 0; i < cont.length; i++) {
-            const conta = cont[i];
-            const estilo = getComputedStyle(conta);
-            // Comparar el color de fondo en formato RGB
-            if (estilo.backgroundColor === 'rgb(244, 248, 125)') {
-                conta.style.backgroundColor = 'rgb(182, 40, 6)';
-                conta.style.boxShadow = '0px 0px 10px rgb(182, 40, 6 )';
-                divs++;
-                break;
-            }
-        }
-
-        }
     }
 
     // Si las horas alcanzan 24, reiniciarlas a 0
@@ -70,7 +48,58 @@ function actualizarReloj() {
 }
 
 // Llamar a la función de actualización cada segundo
-setInterval(actualizarReloj, 1000);
+document.addEventListener("DOMContentLoaded",()=>{
+    interval=setInterval(actualizarReloj, 1000)
+    console.log('cronometro iniciado')
+})
+
+
+function agregarHoras(){
+    horas=horas + 1
+    let horasStr = horas < 10 ? "0" + horas : horas;
+    document.getElementById("Hor").innerHTML = horasStr;
+    if (min === 60) {
+        min = 0;
+        horas++;
+    }
+
+}
+
+function agregarMinutos(){
+    min=min + 1
+    let minStr = min < 10 ? "0" + min : min;
+    document.getElementById("Min").innerHTML = minStr;
+    if (min === 60) {
+        min = 0;
+        horas++;
+    }
+}
+
+function agregarSegundos(){
+    seg=seg + 10
+    let segStr = seg < 10 ? "0" + seg : seg;
+    document.getElementById("Seg").innerHTML = segStr;
+    if (seg === 60) {
+        seg = 0;
+        min++;
+    }
+}
+
+function detenerSeguir() {
+    const img = document.querySelector('img')
+    if (funcionamiento) {
+        clearInterval(interval); // Pausa el cronómetro
+        funcionamiento = false;
+        img.src='../img/reanudar.png'
+        
+    } else {
+        interval = setInterval(actualizarReloj, 1000); // Inicia o reanuda el cronómetro
+        funcionamiento = true;
+        img.src='../img/pausa.png'
+    }
+}
+
+
 
 
 let wakeLock=null;

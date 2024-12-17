@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reloj Web</title>
+    <title>Cronómetro</title>
     <link rel="stylesheet" href="style/numero.css">
     <link href="https://fonts.cdnfonts.com/css/azonix" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/noir" rel="stylesheet">
@@ -11,20 +11,20 @@
 </head>
 <body>
     <nav>
-        <div id="titulo">RELOJ WEB</div>
-        <div id="subtitulo">Reloj para configuarar y usarlo de fondo</div>
+        <div id="titulo">CRONÓMETRO</div>
+        <div id="subtitulo">Cronómetro para configuarar y usarlo de fondo</div>
     </nav>
     <main id="elegir">
         <section id="pregunta">
-            <b id="paso">Ingrese hora, minuto y segundos para crear el reloj y proyectarlo en pantalla</b><br>
+            <b id="paso">Ingrese hora, minuto y segundos para crear el cronómetro o solamente presione <kbd style=" background-color:#6C6F73; color: #212121; padding: 0px 5px; border-radius: 34px;">INICIAR</kbd> para que empiece de 0</b><br>
             <div id="Ingrese">
             <label for="hora">INGRESE HORA: </label>
-            <input type="text" id="hora" size="2">
+            <input type="text" id="hora" size="2" placeholder="00">
             <label for="minutos">INGRESE MINUTOS: </label>
-            <input type="text" id="minutos" name="minutos" size="2">
+            <input type="text" id="minutos" name="minutos" size="2" placeholder="00">
             <label for="segundos">INGRESE SEGUNDOS: </label>
-            <input type="text" id="segundos" name="segundos" size="2"><br>
-            <button type="button" id="enviar" onclick="mostrarReloj()">ENVIAR</button>
+            <input type="text" id="segundos" name="segundos" size="2" placeholder="00"><br>
+            <button type="button" id="enviar" onclick="mostrarReloj()">INICIAR</button>
             </div>
             <div style="width: 23%; height: 50%;"></div>
         </section>

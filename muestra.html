@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RELOJ</title>
+    <title>Comienzo</title>
     <link rel="stylesheet" href="style/reloj.css">
     <link href="https://fonts.cdnfonts.com/css/azonix" rel="stylesheet">
     <link rel="icon" type="png" href="img/Reloj digital3.png">
@@ -28,22 +28,15 @@
                 <p class="pal">SEG</p>
                 <b id="Seg">00</b>
             </div>
+        </section> 
+        <section class="gr-btn-agregar">
+            <button onclick="detenerSeguir()" class="btn" id="detener-btn"><img src="./img/pausa.png" alt="pausa" height="30" style="padding-top: 4px;"></button>
+            <button onclick="agregarHoras()" class="btn" >+ 1 HORA</button>
+            <button onclick="agregarMinutos()" class="btn" >+ 1 MINUTO</button>
+            <button onclick="agregarSegundos()" class="btn" >+ 10 SEGUNDOS</button>
         </section>
-        <div id="contar">
-            <div class="con">I</div>
-            <div class="con">II</div>
-            <div class="con">III</div>
-            <div class="con">IV</div>
-            <div class="con">V</div>
-            <div class="con">VI</div>
-            <div class="con">VII</div>
-            <div class="con">VII</div>
-            <div class="con">IX</div>
-            <div class="con">X</div>
-            <div class="con">XI</div>
-            <div class="con">XI</div>
-        </div>
     </main>
     <script src="js/muestra.js"></script>
+    <script src="js/detener.js"></script>
 </body>
 </html>
