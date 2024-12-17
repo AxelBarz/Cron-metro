@@ -167,3 +167,20 @@ button:hover:after {
         display: none;
     }
 }
+@media only screen and (max-width: 1470px) and (min-width: 926px){
+    div .pal{
+        font-size: 60px;
+    }
+    #reloj div b, #reloj div{
+        font-size: 170px;
+    }
+    #reloj{
+        display: flex;
+        flex-direction: row;
+        height: 800px;
+    }
+    .puntio{
+        position: relative;
+        bottom: 30px;
+    }
+}
