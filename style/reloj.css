@@ -63,7 +63,7 @@ div .pal{
 }
 
 .btn {
-    width: 15em;
+    width: 9em;
     height: 2.7em;
     margin: 0.5em;
     background: #a09f9f;
@@ -134,8 +134,8 @@ button:hover:after {
         height: 2.7em;
     }
     button:hover{
-        background-color: black;
-        color: white;
+        background-color: #f4f87d;
+        color: black;
     }
     button:after{
         display: none;
