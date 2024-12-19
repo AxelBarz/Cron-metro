@@ -120,11 +120,21 @@ button:hover:after {
         position: relative;
         bottom: 15px;
         column-gap: 0;
+        flex-wrap: wrap;
     }
     .btn{
+        height: 4em;
         width: 8em;
-        font-size: 17px;
+        font-size: 10px;
         transition: background-color 0.4s linear ;
+        order: 1;
+    }
+    #detener-btn{
+        width: 4em;
+
+    }
+    #detener-btn img{
+        height: 2.7em;
     }
     button:hover{
         background-color: black;
@@ -182,5 +192,11 @@ button:hover:after {
     .puntio{
         position: relative;
         bottom: 30px;
+    }
+    .gr-btn-agregar{
+        column-gap: 0;
+    }
+    .btn{
+        width: 12em;
     }
 }

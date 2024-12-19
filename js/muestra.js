@@ -76,10 +76,10 @@ function agregarMinutos(){
 }
 
 function agregarSegundos(){
-    seg=seg + 10
+    seg=seg + 10;
     let segStr = seg < 10 ? "0" + seg : seg;
     document.getElementById("Seg").innerHTML = segStr;
-    if (seg === 60) {
+    if (seg >= 60) {
         seg = 0;
         min++;
     }
@@ -97,6 +97,21 @@ function detenerSeguir() {
         funcionamiento = true;
         img.src='../img/pausa.png'
     }
+}
+
+
+function reiniciarCronometro() {
+    clearInterval(interval); // Detiene el cronómetro
+    horas = 0;
+    min = 0;
+    seg = 0;
+    document.getElementById("Hor").innerHTML = "00";
+    document.getElementById("Min").innerHTML = "00";
+    document.getElementById("Seg").innerHTML = "00";
+    localStorage.removeItem('hora');
+    localStorage.removeItem('min');
+    localStorage.removeItem('seg');
+    interval = setInterval(actualizarReloj, 1000); // Reinicia el cronómetro
 }
 
 
